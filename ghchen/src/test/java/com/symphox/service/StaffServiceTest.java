@@ -88,6 +88,7 @@ public class StaffServiceTest {
     @Test
     public void test05Count() throws Exception {
         StaffQueryForm form = new StaffQueryForm();
+        form.setDeptName("officeT");
 
         long count = ss.countStaff(form);
         Assert.assertEquals(count, 30);
@@ -97,6 +98,7 @@ public class StaffServiceTest {
     public void test06Query() throws Exception {
         StaffQueryForm form = new StaffQueryForm();
         form.setAge(25);
+        form.setDeptName("officeT");
 
         Page<StaffDto> page = ss.query(form, PageRequest.of(0, 10));
         Assert.assertNotNull(page);

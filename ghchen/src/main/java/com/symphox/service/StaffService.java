@@ -161,7 +161,7 @@ public class StaffService {
             sb.append(" and s.age = :age");
         }
         if (StringUtils.isNotEmpty(form.getDeptName())) {
-            sb.append(" and s.dept.name LIKE :deptName");
+            sb.append(" and s.dept.fullname LIKE :deptName");
         }
         TypedQuery<Long> q = em.createQuery(sb.toString(), Long.class);
         if (StringUtils.isNotEmpty(form.getFullname())) {
